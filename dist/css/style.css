@@ -36,9 +36,11 @@ body {
   overflow-x: hidden;
   font-family: 'Fjalla One', serif;
 }
-
-h1 {
+.tesla {
   font-family: TESLA;
+}
+.header-f {
+  font-size: 60px;
 }
 nav .sidenav-trigger {
   margin-top: 20px;
@@ -54,7 +56,12 @@ nav .sidenav-trigger {
   transition: all 0.3s ease-in-out;
   transform-origin: 3px 1px;
 }
-
+.bg-dark {
+  background-color: black;
+}
+.bg-dark-2 {
+  background-color: rgb(20, 28, 141);
+}
 /*CONTACT FORM*/
 
 /*Form*/
