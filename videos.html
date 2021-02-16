@@ -39,15 +39,15 @@
 
         <ul class="right hide-on-med-and-down">
           <li><a href="index.html">Home</a></li>
-          <li><a href="">About</a></li>
+          <li><a href="index.html#about">About</a></li>
           <li><a href="videos.html">Videos</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html#submit">Submit Music</a></li>
         </ul>
         <ul id="nav-mobile" class="sidenav">
           <li><a href="index.html">Home</a></li>
-          <li><a href="">About</a></li>
+          <li><a href="index.html#about">About</a></li>
           <li><a href="videos.html">Videos</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html#submit">Contact</a></li>
         </ul>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger header_toggle">
           <span></span>
@@ -104,7 +104,64 @@
         frameborder="0" allowfullscreen></iframe>
     </div>
 
+    <!--Videos-->
+    <div class="container" style="padding-top: 50px;">
+
+
+
+      <div class="row">
+        <div class="col s6 m6">
+          <div data-aos="fade-right" data-aos-duration="2000" data-aos-once="false" class=" video-container"
+            style="padding-top: 7%;">
+            <iframe class="latestVideoEmbed" vnum='{{i}}' cid="UCDXQNb3linY9EksWAvJhPyQ" frameborder="0" allowfullscreen
+              style="border: 5px solid #ffffff; padding: 5px;"></iframe>
+          </div>
+        </div>
+
+        <div class="col s6 m6">
+          <div data-aos="fade-left" data-aos-duration="2000" data-aos-once="false" class=" video-container"
+            style="padding-top: 7%;">
+            <iframe class="latestVideoEmbed" vnum='{{j}}' cid="3DUCL9vywdtfTpzHabkEMxsu9A" frameborder="0"
+              allowfullscreen style="border: 5px solid #ffffff; padding: 5px;"></iframe>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
   </section>
+  <script>
+
+    var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3DUCL9vywdtfTpzHabkEMxsu9A";
+    function loadVideo(iframe) {
+      $.getJSON(reqURL,
+        function (data) {
+          var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
+          console.log(videoNumber);
+
+          var link = data.items[videoNumber].link;
+          id = link.substr(link.indexOf("=") + 1);
+
+          iframe.setAttribute("src", "https://youtube.com/embed/", ">https://youtube.com/embed/" + id + "?controls=1&autoplay=0"); //change controls to 0 if you don't want controls to be displayed, and set autoplay to 1 if you want it to play automatically</a>
+
+        }
+      );
+    }
+
+    var iframes = document.getElementsByClassName('latestVideoEmbed');
+    var span = document.getElementsByClassName('card-title'); // use to get the title of the video
+    for (var i = 0, len = iframes.length; i < len; i++) {
+      loadVideo(iframes[i]);
+    }
+
+  </script>
+
+
+
+
+
+
 
 
 
@@ -115,6 +172,15 @@
 
   <!--Footer-->
   <div class=" footer bg-dark-2 section">
+    <h5 class="center">Partnered With</h5>
+    <div class="grid-container">
+
+      <li>
+        <img src="dist/img/cml.png" class="logo"></img>
+      </li>
+      <li><img src="dist/img/cml.png" class="logo"></li>
+      <li><img src="dist/img/cml.png" class="logo"></li>
+    </div>
     <div class="sm-container center" id="social-mob">
       <ul>
         <li> <a href="https://web.facebook.com/christianmetalsource"><i
