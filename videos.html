@@ -30,24 +30,27 @@
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0"
     nonce="edlIQmoy"></script>
-  <div class="navbar-fixed">
+  <div class="header-text navbar-fixed ">
     <nav class="bg-dark-2" role="navigation">
-      <div class="nav-wrapper container">
-        <a href="" class="tesla header-f">
-          CMS
-        </a>
+      <div class="container ">
+        <div class="menu-nav hide-on-med-and-down">
+          <a href="" class="tesla header-f">
+            CMS
+          </a>
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="videos.html">Videos</a>
+          <a href="index.html#submit">Submit Music</a>
+          <a href="contact.html">Contact</a>
+        </div>
 
-        <ul class="right hide-on-med-and-down">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="videos.html">Videos</a></li>
-          <li><a href="index.html#submit">Submit Music</a></li>
         </ul>
         <ul id="nav-mobile" class="sidenav">
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="videos.html">Videos</a></li>
-          <li><a href="index.html#submit">Contact</a></li>
+          <li><a href="index.html#submit">Submit</a></li>
+          <a href="contact.html">Contact</a>
         </ul>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger header_toggle">
           <span></span>
@@ -57,7 +60,6 @@
       </div>
     </nav>
   </div>
-
 
   <div class="music-section blue darken-4 music-pg-ht">
     <div class="section no-pad-bot">
@@ -72,104 +74,50 @@
 
   </div>
 
-  <section>
 
-    <div class="grid-container">
-
-      <!-- Crowned in Sorrow -->
-      <iframe src="https://www.youtube.com/embed/https://youtube.com/playlist?list=PLaf42reShFFvR6h1mbE3lXvvhxkM0kF5E"
-        width="360" height="315" class="video-container" frameborder="0" allowfullscreen></iframe>
-
-      <!-- Dalit -->
-      <iframe
-        src="https://www.youtube.com/embed/https://www.youtube.com/playlist?list=PLaf42reShFFsDf5fG3BJnN-RezluVFVmx"
-        width="360" height="315" class="video-container" frameborder="0" allowfullscreen></iframe>
-
-      <!-- Like Dust -->
-      <iframe src="https://www.youtube.com/embed/RKhbcRS-BU4" width="360" height="315" class="video-container"
-        frameborder="0" allowfullscreen></iframe>
-
-      <!-- WRN -->
-      <iframe
-        src="https://www.youtube.com/embed/https://www.youtube.com/playlist?list=PLaf42reShFFvUcnCP5nGDLqNuTwPKtmtC"
-        width="360" height="315" frameborder="0" allowfullscreen></iframe>
-
-      <!-- AMIP -->
-      <iframe
-        src="https://www.youtube.com/embed/https://www.youtube.com/playlist?list=PLaf42reShFFspmOrdhCCMrD6GYbF2c_-h"
-        width="360" height="315" frameborder="0" allowfullscreen></iframe>
-
-      <!-- Like Dust -->
-      <iframe src="https://www.youtube.com/embed/RKhbcRS-BU4" width="360" height="315" class="video-container"
-        frameborder="0" allowfullscreen></iframe>
-    </div>
-
-
-
-    <script
-      src="http://www.gmodules.com/ig/ifr?url=http://www.google.com/ig/modules/youtube.xml&amp;up_channel=jcampdpeter&amp;synd=open&amp;w=320&amp;h=390&amp;title=&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
-
-    <!--Videos-->
-    <div class="container" style="padding-top: 50px;">
-
-
-
-      <div class="row">
-        <div class="col s6 m6">
-          <div data-aos="fade-right" data-aos-duration="2000" data-aos-once="false" class=" video-container"
-            style="padding-top: 7%;">
-            <iframe class="latestVideoEmbed" vnum='{{i}}' cid="UCDXQNb3linY9EksWAvJhPyQ" frameborder="0" allowfullscreen
-              style="border: 5px solid #ffffff; padding: 5px;"></iframe>
-          </div>
-        </div>
-
-        <div class="col s6 m6">
-          <div data-aos="fade-left" data-aos-duration="2000" data-aos-once="false" class=" video-container"
-            style="padding-top: 7%;">
-            <iframe class="latestVideoEmbed" vnum='{{j}}' cid="3DUCL9vywdtfTpzHabkEMxsu9A" frameborder="0"
-              allowfullscreen style="border: 5px solid #ffffff; padding: 5px;"></iframe>
-          </div>
-        </div>
-
-      </div>
-
-
-    </div>
-  </section>
+  <script src="https://apis.google.com/js/api.js"></script>
   <script>
+    /**
+     * Sample JavaScript code for youtube.channels.list
+     * See instructions for running APIs Explorer code samples locally:
+     * https://developers.google.com/explorer-help/guides/code_samples#javascript
+     */
 
-    var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3DUCL9vywdtfTpzHabkEMxsu9A";
-    function loadVideo(iframe) {
-      $.getJSON(reqURL,
-        function (data) {
-          var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
-          console.log(videoNumber);
-
-          var link = data.items[videoNumber].link;
-          id = link.substr(link.indexOf("=") + 1);
-
-          iframe.setAttribute("src", "https://youtube.com/embed/", ">https://youtube.com/embed/" + id + "?controls=1&autoplay=0"); //change controls to 0 if you don't want controls to be displayed, and set autoplay to 1 if you want it to play automatically</a>
-
-        }
-      );
+    function authenticate() {
+      return gapi.auth2.getAuthInstance()
+        .signIn({ scope: "https://www.googleapis.com/auth/youtube.readonly" })
+        .then(function () { console.log("Sign-in successful"); },
+          function (err) { console.error("Error signing in", err); });
     }
-
-    var iframes = document.getElementsByClassName('latestVideoEmbed');
-    var span = document.getElementsByClassName('card-title'); // use to get the title of the video
-    for (var i = 0, len = iframes.length; i < len; i++) {
-      loadVideo(iframes[i]);
+    function loadClient() {
+      gapi.client.setApiKey("AIzaSyCoNktCpxuovL0GC2f8NIUWkiI20qDwGMo");
+      return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+        .then(function () { console.log("GAPI client loaded for API"); },
+          function (err) { console.error("Error loading GAPI client for API", err); });
     }
-
+    // Make sure the client is loaded and sign-in is complete before calling this method.
+    function execute() {
+      return gapi.client.youtube.channels.list({
+        "part": [
+          "snippet"
+        ],
+        "id": [
+          "UCL9vywdtfTpzHabkEMxsu9A"
+        ],
+        "maxResults": 10
+      })
+        .then(function (response) {
+          // Handle the results here (response.result has the parsed body).
+          console.log("Response", response);
+        },
+          function (err) { console.error("Execute error", err); });
+    }
+    gapi.load("client:auth2", function () {
+      gapi.auth2.init({ client_id: "YOUR_CLIENT_ID" });
+    });
   </script>
-
-
-
-
-
-
-
-
-
+  <button onclick="authenticate().then(loadClient)">authorize and load</button>
+  <button onclick="execute()">execute</button>
 
 
 
@@ -184,7 +132,7 @@
         <img src="dist/img/cml.png" class="logo"></img>
       </li>
       <li><img src="dist/img/cml.png" class="logo"></li>
-      <li><img src="dist/img/cml.png" class="logo"></li>
+      <li><img src="dist/img/cmp2.jpg" class="logo"></li>
     </div>
     <div class="sm-container center" id="social-mob">
       <ul>

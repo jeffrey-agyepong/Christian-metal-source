@@ -45,6 +45,21 @@ body {
 nav .sidenav-trigger {
   margin-top: 20px;
 }
+.menu-nav {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 1 50%;
+  min-width: 0;
+  padding-left: 15%;
+  gap: 35px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  width: 100%;
+}
 .header_toggle > span:not(:last-child) {
   margin-bottom: 5px;
 }
