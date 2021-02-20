@@ -34,12 +34,11 @@
     <nav class="bg-dark-2" role="navigation">
       <div class="container ">
         <div class="menu-nav hide-on-med-and-down">
-          <a href="" class="tesla header-f">
+          <a href="videos.html">Videos</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html" class="tesla header-f">
             CMS
           </a>
-          <a href="index.html">Home</a>
-          <a href="index.html#about">About</a>
-          <a href="videos.html">Videos</a>
           <a href="index.html#submit">Submit Music</a>
           <a href="contact.html">Contact</a>
         </div>
@@ -74,83 +73,40 @@
 
   </div>
 
-
-  <script src="https://apis.google.com/js/api.js"></script>
-  <script>
-    /**
-     * Sample JavaScript code for youtube.channels.list
-     * See instructions for running APIs Explorer code samples locally:
-     * https://developers.google.com/explorer-help/guides/code_samples#javascript
-     */
-
-    function authenticate() {
-      return gapi.auth2.getAuthInstance()
-        .signIn({ scope: "https://www.googleapis.com/auth/youtube.readonly" })
-        .then(function () { console.log("Sign-in successful"); },
-          function (err) { console.error("Error signing in", err); });
-    }
-    function loadClient() {
-      gapi.client.setApiKey("AIzaSyCoNktCpxuovL0GC2f8NIUWkiI20qDwGMo");
-      return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-        .then(function () { console.log("GAPI client loaded for API"); },
-          function (err) { console.error("Error loading GAPI client for API", err); });
-    }
-    // Make sure the client is loaded and sign-in is complete before calling this method.
-    function execute() {
-      return gapi.client.youtube.channels.list({
-        "part": [
-          "snippet"
-        ],
-        "id": [
-          "UCL9vywdtfTpzHabkEMxsu9A"
-        ],
-        "maxResults": 10
-      })
-        .then(function (response) {
-          // Handle the results here (response.result has the parsed body).
-          console.log("Response", response);
-        },
-          function (err) { console.error("Execute error", err); });
-    }
-    gapi.load("client:auth2", function () {
-      gapi.auth2.init({ client_id: "YOUR_CLIENT_ID" });
-    });
-  </script>
-  <button onclick="authenticate().then(loadClient)">authorize and load</button>
-  <button onclick="execute()">execute</button>
-
-
-
+  <div id="content">
+    <div class="row">
+      <div class="col s6">
+        <form id="channel-form">
+          <div class="input-field col s12">
+            <input type="text" placeholder="Enter Channel Name" id="channel-input">
+            <input type="submit" value="Get Channel Data" class="btn grey">
+          </div>
+        </form>
+      </div>
+      <div id="channel-data" class="col s6"></div>
+    </div>
+    <div class="row" id="video-container"></div>
+  </div>
 
 
   <!--Footer-->
-  <div class="footer bg-dark-4 section">
-    <h5 class="center">Partnered With</h5>
-    <div class="grid-container">
+  <div class="bg-dark-2">
+    <footer class="white-text ">
+      <div class="sm-container center" id="social-mob">
+        <ul>
+          <li class="socials"> <a href="https://web.facebook.com/christianmetalsource"><i
+                class="fab fa-facebook fa-2x white-text"></i></a>
+          </li>
+          <li class="socials"> <a href="https://www.instagram.com/christianmetalsource/" target=_blank
+              id="profile-link"><i class="fab fa-instagram fa-2x white-text"></i></a></li>
+          <li class="socials">
+            <a href="https://www.instagram.com/christianmetalsource/" target=_blank id="profile-link"><i
+                class="fab fa-twitter fa-2x white-text"></i></a>
+          </li>
+          <li class="socials"> <a href="" target="_blank"><i class="fab fa-youtube fa-2x white-text"></i></a></li>
+        </ul>
+      </div>
 
-      <li>
-        <img src="dist/img/cml.png" class="logo"></img>
-      </li>
-      <li><img src="dist/img/cml.png" class="logo"></li>
-      <li><img src="dist/img/cmp.png" class="logo"></li>
-    </div>
-    <div class="sm-container center" id="social-mob">
-      <ul>
-        <li> <a href="https://web.facebook.com/christianmetalsource"><i
-              class="fab fa-facebook fa-2x white-text"></i></a>
-        </li>
-        <li> <a href="https://www.instagram.com/christianmetalsource/" target=_blank id="profile-link"><i
-              class="fab fa-instagram fa-2x white-text"></i></a></li>
-        <li>
-          <a href="https://www.instagram.com/christianmetalsource/" target=_blank id="profile-link"><i
-              class="fab fa-twitter fa-2x white-text"></i></a>
-        </li>
-        <li> <a href="" target="_blank"><i class="fab fa-youtube fa-2x white-text"></i></a></li>
-      </ul>
-    </div>
-
-    <footer class="white-text">
-      <div class="section"></div>
       <div class="grid-container" id="social-mob">
         <p class="center"><a href="cookies-policy.html" target="_blank">Cookies Policy</a></p>
         <p class="center">Copyright© 2021 Christian Metal Source</p>
@@ -165,7 +121,11 @@
 
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="dist/js/materialize.min.js"></script>
+  <script src="main.js"></script>
   <script src="dist/js/init.js"></script>
+  <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+    onreadystatechange="if (this.readyState === 'complete') this.onload()">  </script>
+
 </body>
 
 </html>
