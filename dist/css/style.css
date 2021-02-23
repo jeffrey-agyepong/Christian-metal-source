@@ -25,7 +25,6 @@
 html {
   font-size: 100%;
   box-sizing: border-box;
-  background-color: rgb(22 29 111);
 }
 
 html,
@@ -39,8 +38,61 @@ body {
 .p-text {
   font-size: 25px;
 }
+p {
+  font-size: 1.25rem;
+}
 .header-text {
   font-family: 'Fjalla One';
+  font-size: 25px;
+}
+/* Header */
+
+#header {
+  position: relative;
+  background: #3b4346 url('images/bg01.jpg');
+  border-bottom: solid 1px #272d30;
+  box-shadow: inset 0px -1px 0px 0px #51575a;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75);
+}
+
+#header > .container {
+  position: relative;
+  min-height: 155px;
+}
+
+#header h1 {
+  position: absolute;
+  left: 0;
+  bottom: 35px;
+  font-size: 2.75em;
+}
+
+#header h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#header nav {
+  position: absolute;
+  right: 0;
+  bottom: 35px;
+  font-weight: 200;
+}
+
+#header nav a {
+  color: #c6c8c8;
+  text-decoration: none;
+  font-size: 1.4em;
+  margin-left: 60px;
+  outline: 0;
+}
+
+#header nav a:hover {
+  color: #f6f8f8;
+}
+
+.subpage #header > .container {
+  height: 155px;
 }
 .heading {
   margin: 6.8rem 0 1.68rem 0;
@@ -84,16 +136,16 @@ nav .sidenav-trigger {
   transform-origin: 3px 1px;
 }
 .bg-dark {
-  background-color: black;
+  background-color: rgb(112, 111, 111);
 }
 .bg-dark-2 {
-  background-color: rgb(3, 9, 75);
+  background: url(../img/bg02.jpg);
 }
 .bg-dark-3 {
   background-color: rgb(72, 75, 102);
 }
 .bg-dark-4 {
-  background-color: #3f4899f1;
+  background: url(../img/bg02.jpg);
 }
 .page-section {
   padding: 1.5rem;
@@ -106,6 +158,7 @@ nav .sidenav-trigger {
   min-height: 50px;
   padding: 1.25rem;
 }
+
 /*CONTACT FORM*/
 
 /*Form*/
@@ -133,6 +186,24 @@ form {
 
 .feedback-input:focus {
   border: 2px solid#272729;
+}
+/*Videos*/
+.video-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.video-container::after {
+  padding-top: 56.25%;
+  display: block;
+  content: '';
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .socials {
   display: inline-block;
@@ -196,5 +267,11 @@ textarea {
     grid-template-columns: 1fr 1fr;
     margin-left: 120px;
     margin-right: 80px;
+  }
+}
+
+@media (max-width: 30rem) {
+  h1 {
+    font-size: 3rem;
   }
 }
