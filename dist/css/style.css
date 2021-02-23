@@ -246,6 +246,12 @@ textarea {
   margin: auto;
   grid-gap: 10px;
 }
+.music-container {
+  display: grid;
+  grid-template-columns: auto;
+  margin: auto;
+  grid-gap: 10px;
+}
 .sm-container {
   display: grid;
   grid-template-columns: auto;
@@ -257,6 +263,9 @@ textarea {
     grid-template-columns: 1fr 1fr 1fr;
     margin-left: 50px;
     margin-right: 50px;
+  }
+  .music-container {
+    grid-template-columns: 1fr 1fr;
   }
   .sm-container {
     display: inline-block;
