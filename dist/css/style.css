@@ -1,6 +1,10 @@
 @font-face {
-  font-family: 'Fjalla One';
-  src: url(FjallaOne-Regular.ttf);
+  font-family: 'Grenhil';
+  src: url(Grenhil.otf);
+}
+@font-face {
+  font-family: 'Aldivaro Stamp Demo';
+  src: url(AldivaroStampDemo.otf);
 }
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @font-face {
@@ -33,7 +37,7 @@ body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  font-family: 'Indie Flower';
+  font-family: 'Grenhil';
 }
 .p-text {
   font-size: 25px;
@@ -55,6 +59,8 @@ p {
   border-bottom: solid 1px #272d30;
   box-shadow: inset 0px -1px 0px 0px #51575a;
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75);
+  font-family: 'Aldivaro Stamp Demo';
+  font-size: 15px;
 }
 
 #header > .container {
@@ -98,13 +104,12 @@ p {
 }
 .heading {
   margin: 6.8rem 0 1.68rem 0;
+  font-size: 95px;
 }
 .tesla {
   font-family: TESLA;
 }
-.ft {
-  font-family: fantasy;
-}
+
 .header-f {
   font-size: 60px;
 }
