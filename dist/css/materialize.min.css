@@ -1905,8 +1905,7 @@ nav,
 .hoverable:hover {
   -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(221, 211, 211, 0.19);
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(22, 13, 151, 0.945);
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(21, 21, 29);
 }
 .divider {
   height: 1px;
