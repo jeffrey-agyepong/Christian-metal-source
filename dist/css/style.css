@@ -260,6 +260,10 @@ li {
 footer {
   padding: 15px;
 }
+
+p {
+  font-family: 'Monitoric Regular';
+}
 textarea {
   height: 150px;
   line-height: 150%;
