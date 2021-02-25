@@ -195,6 +195,10 @@ nav .sidenav-trigger {
   min-height: 250px;
   padding: 1.32rem;
 }
+.responsive {
+  width: 100%;
+  height: auto;
+}
 /*CONTACT FORM*/
 
 /*Form*/
@@ -252,6 +256,7 @@ form {
 li {
   list-style: none;
 }
+
 footer {
   padding: 15px;
 }
