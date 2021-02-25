@@ -6,6 +6,10 @@
   font-family: 'Aldivaro Stamp Demo';
   src: url(AldivaroStampDemo.otf);
 }
+@font-face {
+  font-family: 'Monitoric Regular';
+  src: url(monitorica.regular.otf);
+}
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @font-face {
   font-family: 'TESLA';
@@ -40,6 +44,7 @@ body {
   font-family: 'Aldivaro Stamp Demo';
 }
 .p-text {
+  font-family: Monitoric Regular;
   font-size: 25px;
 }
 p {
