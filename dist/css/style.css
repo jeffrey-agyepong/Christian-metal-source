@@ -145,7 +145,7 @@ nav .sidenav-trigger {
   background-color: rgb(112, 111, 111);
 }
 .bg-dark-2 {
-  background: black;
+  background: rgba(0, 0, 0, 0.884);
 }
 .bg-dark-3 {
   background-color: rgb(72, 75, 102);
