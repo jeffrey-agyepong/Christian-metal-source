@@ -331,7 +331,7 @@ textarea {
   }
   .social-container {
     grid-template-columns: 1fr 1fr;
-    margin-left: 20px;
+    padding: 100px;
   }
 }
 
